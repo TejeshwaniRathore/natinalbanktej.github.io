@@ -11,11 +11,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `transaction` (
-  `sno` int(3) NOT NULL,
-  `sender` text NOT NULL,
-  `receiver` text NOT NULL,
-  `balance` int(8) NOT NULL,
-  `datetime` datetime NOT NULL DEFAULT current_timestamp()
+  `sno` bigint(20) NOT NULL,
+  `sender` varchar(11) NOT NULL,
+  `receiver` varchar(11) NOT NULL,
+  `balance` int(11) NOT NULL,
+  `datetime` datetime(4) NOT NULL DEFAULT current_timestamp(4)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -25,10 +25,10 @@ CREATE TABLE `transaction` (
 --
 
 CREATE TABLE `users` (
-  `id` int(3) NOT NULL,
-  `name` text NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `balance` int(8) NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(11) NOT NULL,
+  `email` varchar(34) NOT NULL,
+  `balance` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
